@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 
-import { getEssay, getAllEssayIds } from '@/utils/markdown';
+import { getEssay, getAllEssayIds, Essay } from '@/utils/markdown';
 
 async function getEssays() {
   const ids = getAllEssayIds();
   const essays = await Promise.all(ids.map(id => getEssay(id)));
-  return essays.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // Filter out null essays and sort by date
+  return essays
+    .filter((essay): essay is Essay => essay !== null)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export default async function Essays() {
