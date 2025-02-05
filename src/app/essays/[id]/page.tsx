@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-import { getEssay, getAllEssayIds, Essay } from '@/utils/markdown';
+import { getEssay, getAllEssayIds } from '@/utils/markdown';
 
 export async function generateStaticParams() {
   const ids = getAllEssayIds();
