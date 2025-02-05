@@ -1,16 +1,12 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-import { getEssay, getAllEssayIds } from '@/utils/markdown';
+import { getEssay } from '@/utils/markdown';
 
-export async function generateStaticParams() {
-  const ids = getAllEssayIds();
-  return ids.map((id) => ({ id }));
-}
-
-interface PageProps {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
 
 export default async function EssayPage({ params }: PageProps) {
   if (!params?.id) {
