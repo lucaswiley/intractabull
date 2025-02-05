@@ -7,11 +7,12 @@ export async function generateStaticParams() {
   return ids.map((id) => ({ id }));
 }
 
-type Props = {
-  params: { id: string }
+interface PageProps {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default async function EssayPage({ params }: Props) {
+export default async function EssayPage({ params }: PageProps) {
   if (!params?.id) {
     return null;
   }
