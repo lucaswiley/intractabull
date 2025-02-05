@@ -18,7 +18,7 @@ export default function About() {
           My name is Lucas Wiley.
         </p>
         <p>
-          I am the cofounder and CTO of <a className="text-gray-600 hover:text-white transition-colors" href="https://scoutcities.com" target="_blank" rel="noopener noreferrer">Scout</a>, a technology company that makes it easy for industrial businesses to find the perfect location for their next facility. What has historically been a high risk process with countless months of working with consultants, is now a software interface that makes the process of finding a location faster, easier, and more reliable.
+          I am the cofounder and CTO of <a className="text-gray-600 hover:text-white transition-colors" href="https://scoutcities.com" target="_blank" rel="noopener noreferrer">Scout</a>, where we're building site Selection technology to advance the American industrial base. We make it easy for industrial businesses to find the perfect location for their next facility. What has historically been a high risk process with countless months of working with consultants, is now a software interface that makes the process of finding a location faster, easier, and more reliable.
         </p>
         <p>
           Before founding Scout, I was the founding data and machine learning engineer at <a className="text-gray-600 hover:text-white transition-colors" href="https://tremendous.com" target="_blank" rel="noopener noreferrer">Tremendous</a>. Before Tremendous, I was one of the first data engineers at <a className="text-gray-600 hover:text-white transition-colors" href="https://flexport.com" target="_blank" rel="noopener noreferrer">Flexport</a>, where I worked full-time while I was in college.
@@ -27,7 +27,7 @@ export default function About() {
           I am a firm believer that no problem is too intractable. As long as we keep asking questions, we can always improve the status quo. There is always a better way.
         </p>
         <p>
-          Beyond my work, I spend a significant amount of time in the ocean, in the mountains, and in the jiu-jitsu gym. These things teach me to stay humble and appreciate the earth for all it provides.
+          Beyond work, I spend my time in the ocean, in the mountains, and in the jiu-jitsu gym. These activities teach me to stay humble and appreciate the universe for all it provides.
         </p>
         </div>
         <div className="w-64 flex-shrink-0 mt-20">
