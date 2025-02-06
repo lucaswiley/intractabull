@@ -31,7 +31,7 @@ export default async function EssayPage({ params }: PageProps) {
   }
 
   return (
-    <main className="max-w-2xl ml-6 pt-8 pb-16">
+    <main className="max-w-4xl ml-6 pt-8 pb-16">
       <div className="mb-16">
         <Link href="/" className="text-4xl font-bold hover:text-gray-600 transition-colors block mb-4">
           Intractabull
@@ -50,7 +50,7 @@ export default async function EssayPage({ params }: PageProps) {
           </time>
         )}
         <div 
-          className="mt-8"
+          className="mt-8 max-w-4xl"
           dangerouslySetInnerHTML={{ __html: essay.content }} 
         />
       </article>

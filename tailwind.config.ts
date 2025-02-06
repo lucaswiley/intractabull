@@ -15,10 +15,12 @@ export default {
       typography: {
         DEFAULT: {
           css: {
+            maxWidth: '100%',
             'img': {
               maxWidth: '100%',
-              width: '800px',  // Larger default size
+              width: '1000px',  // Larger default size
               margin: '2rem auto',
+              display: 'block',
             },
           },
         },
