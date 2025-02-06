@@ -2,18 +2,18 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getEssay } from '@/utils/markdown';
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
 export default async function EssayPage({ params }: PageProps) {
-  if (!params?.id) {
-    return null;
+  const { id } = await params;
+  
+  if (!id) {
+    throw new Error('Missing essay ID');
   }
 
-  const essay = await getEssay(params.id);
+  const essay = await getEssay(id);
 
   if (!essay) {
     return (
