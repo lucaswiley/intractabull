@@ -1,6 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About - Intractabull',
+  description: 'About Lucas Wiley - CTO and cofounder of Scout, building site selection technology to advance the American industrial base.',
+  openGraph: {
+    title: 'About Lucas Wiley - Intractabull',
+    description: 'About Lucas Wiley - CTO and cofounder of Scout, building site selection technology to advance the American industrial base.',
+    type: 'profile',
+    images: [{
+      url: '/images/profile.jpeg',
+      width: 256,
+      height: 256,
+      alt: 'Lucas Wiley',
+    }],
+  },
+};
 
 export default function About() {
   return (

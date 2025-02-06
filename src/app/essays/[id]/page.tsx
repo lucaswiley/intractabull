@@ -1,6 +1,33 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { getEssay } from '@/utils/markdown';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Metadata> {
+  const { id } = await params;
+  const essay = await getEssay(id);
+
+  if (!essay) {
+    return {
+      title: 'Essay Not Found - Intractabull',
+      description: 'The requested essay could not be found.',
+    };
+  }
+
+  return {
+    title: `${essay.title} - Intractabull`,
+    description: essay.excerpt || `An essay about ${essay.title.toLowerCase()} by Lucas Wiley`,
+    openGraph: {
+      title: essay.title,
+      description: essay.excerpt || `An essay about ${essay.title.toLowerCase()} by Lucas Wiley`,
+      type: 'article',
+      authors: ['Lucas Wiley'],
+      publishedTime: essay.date,
+    },
+  };
+};
 
 interface PageProps {
   params: Promise<{ id: string }>;

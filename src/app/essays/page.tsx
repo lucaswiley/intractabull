@@ -1,7 +1,17 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
-
+import { Metadata } from 'next';
 import { getEssay, getAllEssayIds, Essay } from '@/utils/markdown';
+
+export const metadata: Metadata = {
+  title: 'Essays - Intractabull',
+  description: 'Essays by Lucas Wiley on technology, business, and life.',
+  openGraph: {
+    title: 'Essays - Intractabull',
+    description: 'Essays by Lucas Wiley on technology, business, and life.',
+    type: 'website',
+  },
+};
 
 async function getEssays() {
   const ids = getAllEssayIds();
