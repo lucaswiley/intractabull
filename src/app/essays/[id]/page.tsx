@@ -31,7 +31,7 @@ export default async function EssayPage({ params }: PageProps) {
   }
 
   return (
-    <main className="max-w-2xl ml-6 py-16">
+    <main className="max-w-2xl ml-6 pt-8 pb-16">
       <div className="mb-16">
         <Link href="/" className="text-4xl font-bold hover:text-gray-600 transition-colors block mb-4">
           Intractabull
@@ -39,7 +39,7 @@ export default async function EssayPage({ params }: PageProps) {
         <Navigation />
       </div>
       <article className="prose prose-invert">
-        <h1 className="text-3xl font-bold mb-4">{essay.title}</h1>
+        <h1 className="text-3xl font-bold mb-8">{essay.title}</h1>
         {essay.date && (
           <time className="text-sm text-gray-500 block mb-8">
             {new Date(essay.date).toLocaleDateString('en-US', {
