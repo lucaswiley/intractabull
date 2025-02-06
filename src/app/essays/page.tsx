@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import { Metadata } from 'next';
 import { getEssay, getAllEssayIds, Essay } from '@/utils/markdown';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Essays - Intractabull',
@@ -25,7 +26,17 @@ async function getEssays() {
 export default async function Essays() {
   const essays = await getEssays();
   return (
-    <main className="max-w-2xl ml-6 pt-8 pb-16">
+    <main className="max-w-2xl ml-6 mr-6 pt-8 pb-16 relative">
+      <Link href="https://scoutcities.com" target="_blank" rel="noopener noreferrer" className="fixed right-6">
+        <Image
+          src="/scout.ico"
+          alt="Scout Icon"
+          width={48}
+          height={48}
+          priority
+          className="hover:opacity-80 transition-opacity"
+        />
+      </Link>
       <div className="mb-16">
         <Link href="/" className="text-4xl font-bold hover:text-gray-600 transition-colors block mb-4">
           Intractabull

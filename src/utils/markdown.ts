@@ -15,6 +15,26 @@ export interface Essay {
   title: string;
   date: string;
   content: string;
+  excerpt: string;
+}
+
+function generateExcerpt(content: string, maxLength: number = 160): string {
+  // Remove HTML tags and markdown syntax
+  const plainText = content
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/\[([^\]]*)\]\([^\)]*\)/g, '$1') // Replace markdown links with just text
+    .replace(/[\*_~`]/g, '') // Remove markdown formatting
+    .replace(/\n+/g, ' ') // Replace newlines with spaces
+    .trim();
+
+  // Get first sentence or truncate to maxLength
+  const firstSentence = plainText.split(/[.!?]\s/)[0];
+  if (firstSentence.length <= maxLength) {
+    return firstSentence;
+  }
+
+  // Truncate to maxLength and add ellipsis
+  return plainText.slice(0, maxLength).trim() + '...';
 }
 
 export async function getEssay(id: string): Promise<Essay | null> {
@@ -48,6 +68,7 @@ export async function getEssay(id: string): Promise<Essay | null> {
       title: matterResult.data.title || id,
       date: matterResult.data.date || '',
       content: contentHtml,
+      excerpt: generateExcerpt(matterResult.content),
     };
   } catch (error) {
     console.error(`Error processing essay ${id}:`, error);
