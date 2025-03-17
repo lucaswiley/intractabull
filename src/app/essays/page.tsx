@@ -26,7 +26,7 @@ async function getEssays() {
 export default async function Essays() {
   const essays = await getEssays();
   return (
-    <main className="max-w-2xl ml-6 mr-6 pt-8 pb-16 relative">
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-16 relative">
       <Link href="https://scoutcities.com" target="_blank" rel="noopener noreferrer" className="fixed right-6">
         <Image
           src="/scout.ico"
@@ -44,18 +44,18 @@ export default async function Essays() {
         <Navigation /> 
       </div>
       <h1 className="text-3xl font-bold mb-8">Essays</h1>
-      <div className="space-y-4">
+      <div className="space-y-6">
         {essays.map((essay) => (
           <Link 
             key={essay.id}
             href={`/essays/${essay.id}`}
-            className="block"
+            className="block p-3 -mx-3 rounded-lg hover:bg-gray-800/30 transition-colors"
           >
-            <div className="text-lg hover:text-gray-600 transition-colors cursor-pointer">
+            <div className="text-lg sm:text-xl font-medium hover:text-gray-300 transition-colors cursor-pointer">
               {essay.title}
             </div>
             {essay.date && (
-              <time className="text-sm text-gray-500 block mt-1">
+              <time className="text-sm text-gray-400 block mt-2">
                 {new Date(essay.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',

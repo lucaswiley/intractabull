@@ -14,11 +14,11 @@ const navItems: NavItem[] = [
   { label: 'github', href: 'https://github.com/lucaswiley', external: true },
 ];
 
-const linkStyles = 'text-gray-500 hover:text-white transition-colors';
+const linkStyles = 'text-gray-500 hover:text-white transition-colors text-sm sm:text-base font-medium py-1';
 
 const Navigation = () => (
-  <nav>
-    <div className="flex items-start space-x-6">
+  <nav className="w-full overflow-x-auto pb-2">
+    <div className="flex flex-wrap items-start gap-4 sm:gap-6">
       {navItems.map(({ label, href, external }) => {
         const Component = external ? 'a' : Link;
         return (
