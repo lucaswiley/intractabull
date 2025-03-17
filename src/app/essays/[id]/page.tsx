@@ -65,7 +65,7 @@ export default async function EssayPage({ params }: PageProps) {
         </Link>
         <Navigation />
       </div>
-      <article className="prose prose-invert">
+      <article className="prose prose-invert prose-lg lg:prose-xl max-w-none">
         <h1 className="text-3xl font-bold mb-8">{essay.title}</h1>
         {essay.date && (
           <time className="text-sm text-gray-500 block mb-8">
@@ -77,7 +77,8 @@ export default async function EssayPage({ params }: PageProps) {
           </time>
         )}
         <div 
-          className="mt-8 max-w-4xl"
+          className="mt-8 max-w-4xl text-lg leading-relaxed"
+          style={{ fontSize: '1.125rem', lineHeight: '1.75', letterSpacing: '0.015em' }}
           dangerouslySetInnerHTML={{ __html: essay.content }} 
         />
       </article>
