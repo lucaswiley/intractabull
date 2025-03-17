@@ -54,7 +54,7 @@ export default function About() {
           I am a firm believer that no problem is too intractable. As long as we keep asking questions, we can always improve the status quo. There is always a better way.
         </p>
         <p>
-          Beyond work, I spend my time in the ocean, mountains, and jiu-jitsu gym. These activities teach me humility and appreciation of the universe and all it provides.
+          Beyond work, I spend my time in the ocean and mountains. These activities teach me humility and appreciation of the universe and all it provides.
         </p>
         </div>
         <div className="w-64 flex-shrink-0 mt-20">
