@@ -9,7 +9,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: 'about', href: '/about' },
   { label: 'essays', href: '/essays' },
-  { label: 'twitter', href: 'https://x.com/intractabull', external: true },
+  { label: 'x', href: 'https://x.com/intractabull', external: true },
   { label: 'email', href: 'mailto:lukewiley1@gmail.com', external: true },
   { label: 'github', href: 'https://github.com/lucaswiley', external: true },
 ];
@@ -18,7 +18,7 @@ const linkStyles = 'text-gray-500 hover:text-white transition-colors text-sm sm:
 
 const Navigation = () => (
   <nav className="w-full overflow-x-auto pb-2">
-    <div className="flex flex-wrap items-start gap-4 sm:gap-6">
+    <div className="flex flex-wrap items-start gap-4 sm:gap-6 justify-center">
       {navItems.map(({ label, href, external }) => {
         const Component = external ? 'a' : Link;
         return (
